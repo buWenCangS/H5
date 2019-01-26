@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        document.write("这是第一个文件");
+        console.log(undefined == null)
+        var obj = new Object();
+        obj.name = "changsan";
+        obj.age = 18;
+        obj.address = "小桥流水人家";
+
+        console.log(obj.name);
+        obj.name = "孙悟空小弟娃";
+        console.log(obj.name);
+
+        obj["name"] = "李四";
+        console.log(obj.name); // 可以看出 输出都是李四  那么这两个属性其实是一个属性的不同使用方式
+        console.log(obj["name"]);
+        obj["age"] = 19;
+        obj["address"] = "张家界";
+
+        var attName = "address"; // 可以实现动态访问属性
+        console.log(obj[attName]);
+
+        {
+            // 代码块，只是起一个让代码层次清晰的功能，并没有实际的封装隔离功能
+            var ds  = 55;
+        }
+
+        function bbKing(){
+            var say = "bbKing是最强的话语搅拌机";
+            return "张三";
+        }
+        console.log(bbKing());
+
+        console.log(ds);
+
+    </script>
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>

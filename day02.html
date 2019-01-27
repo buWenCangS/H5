@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript">
+
+        var count = 0;
+        for(let i = 0; i < 10; i ++){
+            for(let j = 0; j < 10; j ++){
+                if(i == 5){
+                    break; // 跳出一层循环
+                }
+                console.log(count ++);
+            }
+
+        }
+        outSit:
+        // console.log("输出的次数");
+        for(var s = 0; s < 10; s++){
+            for(var k = 0;k < 10; k ++) {
+                if (s == 5) {
+                    break outSit;
+                }
+                console.log(count--); // 跳出到指定的位置
+            }
+        }
+
+        console.log("能输出s吗：" + s ); //全局变量
+        // console.loog(i); //报错
+
+        var use = new Object();
+        use.name = "小三";
+        use.age = 18;
+        use.show = "长发魔女";
+
+        for(propName in use){
+            console.log(propName); //输出属性的字符串
+            console.log(use[propName]); // 输出属性的值    顺序不是一定的
+        }
+
+        // use.forEach()
+        // with 语法，将一个对象作为代码块中的作用域，根据变量的名字，会现在全局变量中找，如果没有就从对象的属性中来找
+        // 但是一般不建议使用，因为大量的使用该语句会降低性能，也会给调试代码带来困难
+        // switch 做比较的时候是使用的=== 不会自动做类型转换
+        with(location){
+
+            console.log(hostname);
+            console.log(search);
+        }
+
+        function say() {
+            console.log(arguments[0] + arguments[1]);
+        }
+
+        say("张三","你妈让你回家吃饭了");  // js中函数的参数并不是固定的，  函数的参数都是可以通过arguments来获取，它和数组是很类似的，可以使用length来获取参数的个数
+
+    </script>
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
